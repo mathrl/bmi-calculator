@@ -1,4 +1,4 @@
-# imc
+# bmi-calculator
 
 ## Project setup
 ```
