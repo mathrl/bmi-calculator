@@ -1,6 +1,6 @@
 # bmi-calculator
 
-## Live on [heroku](https://serene-fjord-94555.herokuapp.com/)
+## Live on [heroku](http://the-bmi-calculator.herokuapp.com/)
 
 ## Project setup
 ```
