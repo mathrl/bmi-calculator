@@ -10,7 +10,7 @@
 
     <bmi-description></bmi-description>
 
-    <bmi-results :weight="weight" :height="height"></bmi-results>
+    <!--<bmi-results :weight="weight" :height="height"></bmi-results>-->
   </main>
 </template>
 
@@ -66,7 +66,7 @@ section {
   flex-wrap: wrap;
   width: $width;
   margin: 0 auto;
-  
+  margin-bottom: 15px;
 }
 
 section.input-and-result {
