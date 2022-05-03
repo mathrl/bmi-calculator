@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <h2>What is BMI?</h2>
     <p>
       BMI, formerly called the Quetelet index, is a measure for indicating
@@ -29,7 +29,7 @@
       is defined as a BMI-for-age value over +1 SD and obesity as a BMI-for-age
       value over +2 SD.
     </p>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -42,7 +42,7 @@ h2 {
   font-size: 2rem;
 }
 
-div {
+section {
   margin-bottom: 10px;
 }
 </style>

@@ -8,9 +8,7 @@
       <bmi-results :weight="weight" :height="height"></bmi-results>
     </section>
 
-    <section>
-      <bmi-description></bmi-description>
-    </section>
+    <bmi-description></bmi-description>
 
     <bmi-results :weight="weight" :height="height"></bmi-results>
   </main>
@@ -40,7 +38,7 @@ export default {
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
-  color: rgb(197, 197, 197);
+  color: rgb(240, 240, 240);
 }
 
 body {
@@ -50,7 +48,7 @@ body {
 
 <style lang="scss" scoped>
 
-$width: 50%;
+$width: 90%;
 
 header {
   width: $width;

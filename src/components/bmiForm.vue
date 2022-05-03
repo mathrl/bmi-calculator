@@ -25,7 +25,6 @@
 
       <input
         id="weight"
-        type="number"
         v-model="input_weight"
         @input="updateBMI"
       />
@@ -56,7 +55,6 @@
 
       <input
         id="height"
-        type="number"
         v-model="input_height"
         @input="updateBMI"
       />
@@ -106,15 +104,15 @@ export default {
       this.isM = m;
       if (type == "weight") {
         if (kg) {
-          this.input_weight /= 2.2;
+          this.input_weight = (this.input_weight / 2.2).toFixed(2);
         } else {
-          this.input_weight *= 2.2;
+          this.input_weight = (this.input_weight * 2.2).toFixed(2);
         }
       } else if (type == "height") {
         if (m) {
-          this.input_height /= 3.28;
+          this.input_height = (this.input_height / 3.28).toFixed(2);
         } else {
-          this.input_height *= 3.28;
+          this.input_height = (this.input_height * 3.28).toFixed(2);
         }
       }
     },
@@ -130,6 +128,7 @@ div.bmi-input {
     border: 1px solid rgb(143, 143, 143);
     border-radius: 10px;
     font-size: 20px;
+    color: #141414;
   }
 }
 

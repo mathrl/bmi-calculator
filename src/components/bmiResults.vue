@@ -86,6 +86,13 @@ div.result-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 20%;
+}
+
+@media all and (max-width: 716px) {
+  div.result-wrapper {
+  max-width: 90%;
+}
 }
 
 h3.result-number {
