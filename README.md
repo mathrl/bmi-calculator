@@ -1,5 +1,7 @@
 # bmi-calculator
 
+## Live on [heroku](https://serene-fjord-94555.herokuapp.com/)
+
 ## Project setup
 ```
 npm install
