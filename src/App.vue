@@ -1,31 +1,31 @@
 <template>
-    <header>
-      <h1>{{ strings.title }}</h1>
-      <button class="btn btn-secondary" @click="changeLang">change lang</button>
-      <button class="btn btn-secondary" @click="changeDark">
-        change dark mode
-      </button>
-    </header>
-    <main>
-      <section class="input-and-result">
-        <bmi-form @update-bmi="updateBMI" :lang="strings"></bmi-form>
-        <bmi-results
-          :weight="weight"
-          :height="height"
-          :lang="strings"
-        ></bmi-results>
-      </section>
+  <header>
+    <h1>{{ strings.title }}</h1>
+    <button class="btn btn-secondary" @click="changeLang">change lang</button>
+    <button class="btn btn-secondary" @click="changeDark">
+      change dark mode
+    </button>
+  </header>
+  <main>
+    <section class="input-and-result">
+      <bmi-form @update-bmi="updateBMI" :lang="strings"> </bmi-form>
+      <bmi-results
+        :weight="weight"
+        :height="height"
+        :lang="strings"
+      ></bmi-results>
+    </section>
 
-      <bmi-description></bmi-description>
+    <bmi-description></bmi-description>
 
-      <!--<bmi-results :weight="weight" :height="height"></bmi-results>-->
-    </main>
+    <!--<bmi-results :weight="weight" :height="height"></bmi-results>-->
+  </main>
 </template>
 
 <script>
+import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import "jquery/src/jquery.js";
 
 import strings from "./assets/strings.json";
 
@@ -50,9 +50,11 @@ export default {
     },
   },
 
-  mounted() {
+  created() {
     this.browserLang = window.navigator.language;
+
     this.isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (this.isDarkMode) $("body").addClass("dark");
   },
 
   methods: {
@@ -70,11 +72,11 @@ export default {
       }
     },
 
-    changeDark(){
-      if(this.isDarkMode) document.body.classList.add('dark');
-      else document.body.classList.remove('dark');
+    changeDark() {
       this.isDarkMode = !this.isDarkMode;
-    }
+      if (this.isDarkMode) document.body.classList.add("dark");
+      else document.body.classList.remove("dark");
+    },
   },
 };
 </script>
@@ -89,11 +91,12 @@ export default {
 
 body {
   color: rgb(32, 32, 32);
+  transition: 0.2s all;
 }
 
 .dark {
   background-color: #141414;
-  color:#ebebeb;
+  color: #ebebeb;
 }
 </style>
 

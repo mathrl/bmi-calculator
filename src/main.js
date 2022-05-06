@@ -5,7 +5,6 @@ import bmiResults from './components/bmiResults.vue'
 import bmiDescription from './components/bmiDescription.vue'
 
 
-
 const app = createApp(App);
 
 app.component('bmi-form', bmiForm);
