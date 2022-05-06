@@ -16,7 +16,7 @@
       ></bmi-results>
     </section>
 
-    <bmi-description></bmi-description>
+    <bmi-description :lang="strings"></bmi-description>
 
     <!--<bmi-results :weight="weight" :height="height"></bmi-results>-->
   </main>

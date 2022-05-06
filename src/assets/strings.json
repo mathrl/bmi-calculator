@@ -1,17 +1,35 @@
 {
-    "PT": {
-        "lang": "PT",
-        "title": "Calculadora IMC",
-        "weight": "Peso",
-        "height": "Altura",
-        "result": "Seu Índice de Massa Corporal é"
-    },
+  "PT": {
+    "lang": "PT",
+    "title": "Calculadora IMC",
+    "weight": "Peso",
+    "height": "Altura",
+    "result": "Seu Índice de Massa Corporal é",
+    "breakpoints": [
+      "Peso baixo",
+      "Peso normal",
+      "Sobrepreso",
+      "Obesidade grau I",
+      "Obesidade grau II",
+      "Obesidade grau III"
+    ],
+    "desc_title": "O que é IMC"
+  },
 
-    "EN": {
-        "lang": "EN",
-        "title": "BMI Calculator",
-        "weight": "Weight",
-        "height": "Height",
-        "result": "Your Body Mass Index is"
-    }
+  "EN": {
+    "lang": "EN",
+    "title": "BMI Calculator",
+    "weight": "Weight",
+    "height": "Height",
+    "result": "Your Body Mass Index is",
+    "breakpoints": [
+      "Underweight",
+      "Normal weight",
+      "Pre-obesity",
+      "Obesity class I",
+      "Obesity class II",
+      "Obesity class III"
+    ],
+    "desc_title": "What is BMI"
+  }
 }

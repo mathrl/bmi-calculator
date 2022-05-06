@@ -3,7 +3,7 @@
     <!-- seletor peso -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="weight">{{this.lang.weight}}: </label>
+        <label for="weight">{{lang.weight}}: </label>
         <div class="unit-selector">
           <input
             type="radio"
@@ -33,7 +33,7 @@
     <!-- seletor altura -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="height">{{this.lang.height}}: </label>
+        <label for="height">{{lang.height}}: </label>
         <div class="unit-selector">
           <input
             type="radio"

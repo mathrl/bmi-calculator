@@ -1,7 +1,7 @@
 <template>
   <div class="result-wrapper">
     <h3 class="result-number">
-      {{this.lang.result}} <b>{{ bmi }}</b> kg/m2
+      {{lang.result}} <b>{{ bmi }}</b> kg/m2
     </h3>
 
     <div class="result-name">
@@ -23,15 +23,7 @@ export default {
 
   data() {
     return {
-      bmi_breakpoints: [18.5, 24.9, 29.9, 34.9, 39.9],
-      bmi_breakpoints_names: [
-        "Underweight",
-        "Normal weight",
-        "Pre-obesity",
-        "Obesity class I",
-        "Obesity class II",
-        "Obesity class III",
-      ],
+      bmi_breakpoints: [18.5, 24.9, 29.9, 34.9, 39.9]
     };
   },
 
@@ -41,6 +33,10 @@ export default {
 
 
       return bmi.toFixed(2);
+    },
+
+    bmi_breakpoints_names(){
+      return this.lang.breakpoints;
     },
 
     bmi_status() {

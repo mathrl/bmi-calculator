@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>What is BMI?</h2>
+    <h2>{{lang.desc_title}}</h2>
     <p>
       BMI, formerly called the Quetelet index, is a measure for indicating
       nutritional status in adults. It is defined as a person’s weight in
@@ -29,8 +29,16 @@
       is defined as a BMI-for-age value over +1 SD and obesity as a BMI-for-age
       value over +2 SD.
     </p>
+
+    <p><a href="https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi">Source</a></p>
   </section>
 </template>
+
+<script>
+export default {
+  props:['lang']
+}
+</script>
 
 <style scoped>
 h2,
