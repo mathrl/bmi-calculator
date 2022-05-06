@@ -1,7 +1,7 @@
 <template>
   <div class="result-wrapper">
     <h3 class="result-number">
-      Your Body Mass Index is <b>{{ bmi }}</b> kg/m2
+      {{this.lang.result}} <b>{{ bmi }}</b> kg/m2
     </h3>
 
     <div class="result-name">
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ["weight", "height"],
+  props: ["weight", "height", "lang"],
 
   data() {
     return {

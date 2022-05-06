@@ -3,7 +3,7 @@
     <!-- seletor peso -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="weight">Weight: </label>
+        <label for="weight">{{this.lang.weight}}: </label>
         <div class="unit-selector">
           <input
             type="radio"
@@ -33,7 +33,7 @@
     <!-- seletor altura -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="height">Height: </label>
+        <label for="height">{{this.lang.height}}: </label>
         <div class="unit-selector">
           <input
             type="radio"
@@ -64,6 +64,7 @@
 
 <script>
 export default {
+  props:["lang"],
   emits: ["update-bmi"],
   data() {
     return {

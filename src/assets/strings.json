@@ -1,0 +1,17 @@
+{
+    "PT": {
+        "lang": "PT",
+        "title": "Calculadora IMC",
+        "weight": "Peso",
+        "height": "Altura",
+        "result": "Seu Índice de Massa Corporal é"
+    },
+
+    "EN": {
+        "lang": "EN",
+        "title": "BMI Calculator",
+        "weight": "Weight",
+        "height": "Height",
+        "result": "Your Body Mass Index is"
+    }
+}
