@@ -2,34 +2,9 @@
   <header>
     <h1>{{ strings.title }}</h1>
 
-    <div id="selectors">
-      <div>
-        <span>🇧🇷</span>
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckDefault"
-            v-model="selectedLang"
-          />
-        </div>
-        <span>🇺🇸</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-sun"></i>
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckDefault"
-            v-model="isDarkMode"
-          />
-        </div>
-        <i class="fa-solid fa-moon"></i>
-      </div>
-    </div>
+    <TheSelectors @changeLang="changeLang" />
   </header>
+  
   <main>
     <section class="input-and-result">
       <bmi-form @update-bmi="updateBMI" :lang="strings"> </bmi-form>
@@ -41,31 +16,28 @@
     </section>
 
     <bmi-description :lang="strings"></bmi-description>
-
-    <!--<bmi-results :weight="weight" :height="height"></bmi-results>-->
   </main>
 </template>
 
 <script>
-// import $ from "jquery";
-
-import "bootstrap";
 import strings from "./assets/strings.json";
+import TheSelectors from "./components/TheSelectors.vue";
 
 export default {
+  components: {
+    TheSelectors,
+  },
+
   data() {
     return {
       isDarkMode: false,
-
       height: 1.8,
       weight: 80,
-
       browserLang: "",
       selectedLang: null,
       lang: "",
     };
   },
-
   computed: {
     strings() {
       if (this.selectedLang) {
@@ -75,30 +47,16 @@ export default {
     },
   },
 
-  watch: {
-    isDarkMode() {
-      if (this.isDarkMode) document.body.classList.add("dark");
-      else document.body.classList.remove("dark");
-    },
-  },
-
-  created() {
-    this.browserLang = window.navigator.language;
-
-    this.browserLang == "en-US"
-      ? (this.selectedLang = true)
-      : (this.selectedLang = false);
-
-    this.isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (this.isDarkMode) document.body.classList.add("dark");
-  },
-
   methods: {
     updateBMI(height, weight) {
       this.height = height;
       this.weight = weight;
-    }
-  },
+    },
+
+    changeLang(newLang) {
+      this.selectedLang = newLang;
+    },
+  }
 };
 </script>
 
@@ -106,13 +64,18 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
   font-weight: 500;
 }
 
 body {
   color: rgb(32, 32, 32);
   transition: 0.2s all;
+}
+
+.container {
+  max-width: 1000px !important;
 }
 
 .dark {
@@ -122,32 +85,6 @@ body {
 </style>
 
 <style lang="scss" scoped>
-.form-check {
-  display: inline-block;
-  margin: 0;
-}
-
-.form-switch {
-  padding-left: 0;
-}
-
-.form-switch .form-check-input {
-  margin: 0 5px;
-}
-
-div#selectors {
-  display: flex;
-  align-items: center;
-  justify-content:space-evenly;
-  width: 35%;
-  margin:0 auto;
-
-  div {
-    display: flex;
-    align-items: center;
-  }
-}
-
 $width: 90%;
 
 header {
@@ -170,9 +107,7 @@ section {
 }
 
 section.input-and-result {
-  border: 1px solid rgb(230, 230, 230);
   border-radius: 10px;
-  padding: 20px;
   margin-top: 15px;
 }
 

@@ -103,6 +103,8 @@ b {
 }
 
 div.result-name {
+  text-align: center;
+
   .color-indicator {
     display: inline-block;
     vertical-align: middle;
@@ -119,6 +121,7 @@ div.result-name {
 
     h3 {
       font-weight: bold;
+      margin-bottom: 0;
     }
   }
 }

@@ -3,7 +3,7 @@
     <!-- seletor peso -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="weight">{{lang.weight}}: </label>
+        <label for="weight">{{ lang.weight }}: </label>
         <div class="unit-selector">
           <input
             type="radio"
@@ -23,17 +23,13 @@
         </div>
       </div>
 
-      <input
-        id="weight"
-        v-model="input_weight"
-        @input="updateBMI"
-      />
+      <input id="weight" type="number" v-model="input_weight" @input="updateBMI" />
     </div>
 
     <!-- seletor altura -->
     <div class="bmi-input">
       <div class="unit-selector-wrapper">
-        <label for="height">{{lang.height}}: </label>
+        <label for="height">{{ lang.height }}: </label>
         <div class="unit-selector">
           <input
             type="radio"
@@ -53,23 +49,19 @@
         </div>
       </div>
 
-      <input
-        id="height"
-        v-model="input_height"
-        @input="updateBMI"
-      />
+      <input id="height" type="number" v-model="input_height" @input="updateBMI" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:["lang"],
+  props: ["lang"],
   emits: ["update-bmi"],
   data() {
     return {
       input_weight: 80,
-      input_height: 1.80,
+      input_height: 1.8,
       input_gender: "m",
       isKg: true,
       isM: true,
@@ -125,7 +117,7 @@ export default {
 div.bmi-input {
   margin-bottom: 30px;
   input {
-    padding: 20px;
+    padding: 8px 0 8px 15px;
     border: 1px solid rgb(143, 143, 143);
     border-radius: 10px;
     font-size: 20px;
@@ -138,7 +130,7 @@ div.unit-selector {
 
   label {
     margin-right: 8px;
-     cursor: pointer;
+    cursor: pointer;
   }
   input {
     margin-right: 2px;
@@ -150,61 +142,60 @@ label {
   font-size: 20px;
   margin-bottom: 5px;
   margin-right: 9px;
- 
 }
 
 $color1: #f4f4f4;
-$color2: #3197EE;
+$color2: #3197ee;
 input[type="radio"] {
-    position: absolute;
-    opacity: 0;
+  position: absolute;
+  opacity: 0;
+  + label {
+    &:before {
+      content: "";
+      background: $color1;
+      border-radius: 100%;
+      border: 1px solid darken($color1, 25%);
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      position: relative;
+      margin-right: 2px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.25s ease;
+    }
+  }
+  &:checked {
     + label {
       &:before {
-        content: '';
-        background: $color1;
-        border-radius: 100%;
-        border: 1px solid darken($color1, 25%);
-        display: inline-block;
-        width: 0.8em;
-        height: 0.8em;
-        position: relative;
-        margin-right: 2px; 
-        cursor: pointer;
-        text-align: center;
-        transition: background-color .25s ease;
-      }
-    }
-    &:checked {
-      + label {
-        &:before {
-          background-color: $color2;
-          box-shadow: inset 0 0 0 4px $color1;
-        }
-      }
-    }
-    &:focus {
-      + label {
-        &:before {
-          outline: none;
-          border-color: $color2;
-        }
-      }
-    }
-    &:disabled {
-      + .radio-label {
-        &:before {
-          box-shadow: inset 0 0 0 4px $color1;
-          border-color: darken($color1, 25%);
-          background: darken($color1, 25%);
-        }
-      }
-    }
-    + label {
-      &:empty {
-        &:before {
-          margin-right: 0;
-        }
+        background-color: $color2;
+        box-shadow: inset 0 0 0 4px $color1;
       }
     }
   }
+  &:focus {
+    + label {
+      &:before {
+        outline: none;
+        border-color: $color2;
+      }
+    }
+  }
+  &:disabled {
+    + .radio-label {
+      &:before {
+        box-shadow: inset 0 0 0 4px $color1;
+        border-color: darken($color1, 25%);
+        background: darken($color1, 25%);
+      }
+    }
+  }
+  + label {
+    &:empty {
+      &:before {
+        margin-right: 0;
+      }
+    }
+  }
+}
 </style>
